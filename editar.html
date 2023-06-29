@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ChekList-Web</title>
+  <link rel="stylesheet" href="editar.css"> <!-- linkeo de estilo css --> 
+</head>
+<body>
+  <header> <!-- lo que esta en el cabezal de la pagina --> 
+    <h1>TO - DO - LIST</h1>
+      <button class="button" id="botonLogin"></button>
+      <div class="dropdown-content">
+        <a href="#" onclick="openRegistro()">Registrarse</a>
+        <a href="#" onclick="openLogin()">Iniciar sesion</a>
+        <a href="#" onclick="openLista()">Lista de Tareas</a>
+      </div>
+    </div>
+  </header>
+  <br><br><br><br>
+  <div class="botones">
+    <button class="boton">DIAS</button>
+    <button class="boton">SEMANA</button>
+    <button class="boton">MES</button>
+  </div>
+  <br><br><br><br>
+  <div class="cuadrados">
+    <div id="cuadrado1"></div>
+    <div id="cuadrado2">
+      <div id="contenedorRegistro" class="contenedorRegistro">
+        <div class="formulario">
+          <h1 id="tituloRegistro">Registro</h1>
+          <form>
+            <div class="input-group">
+              <div class="input-field" id="nameInput">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="Nombre">
+              </div>
+              <div class="input-field">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Correo">
+              </div>
+              <div class="input-field">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Contraseña">
+              </div>
+            </div>
+            <div class="btn-field">
+              <button id="SignUp" type="button">Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="contenedorLogin" class="contenedorLogin">
+        <div class="formulario">
+          <h1 id="tituloLogin">Login</h1>
+          <form>
+            <div class="input-group">
+              <div class="input-field">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Correo">
+              </div>
+              <div class="input-field">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Contraseña">
+              </div>
+            </div>
+            <div class="btn-field">
+              <p>Olvidaste tu contraseña <a href="#">click aquí</a></p>
+              <button id="SignIn" type="submit">Iniciar sesión</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="contenedorLista" class="contenedorLista">
+      <h1 id="tituloLista">Lista de tareas pendientes</h1>
+      <label for="inputNuevaTarea">Agregar nueva tarea: </label>
+      <input type="text" id="inputNuevaTarea">
+      <button id="btnAgregarTarea">Ok</button>
+      <ul id="contenedorTareas"></ul>
+      </div>
+    </div>
+    <div id="cuadrado3"></div>
+  </div>
+  <br><br><br><br>
+  <div class="resultado">
+    <button class="boton1">PENDIENTES</button>
+    <img src="https://i.pinimg.com/originals/9c/d5/7e/9cd57e2d97f3da5158dad195f144fb5d.png" alt="Imagen"
+      class="imagen" width="10%">
+    <button class="boton1">PORCENTAJE</button>
+  </div>
+  <script src="editar.js"></script>
+</body>
+
+</html>
