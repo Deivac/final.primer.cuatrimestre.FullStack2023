@@ -8,8 +8,8 @@
 <body>
   <header> <!-- lo que esta en el cabezal de la pagina --> 
     <h1>TO - DO - LIST</h1>
-      <button class="button" id="botonLogin"></button>
-      <div class="dropdown-content">
+      <button class="button" id="botonLogin"></button><!-- Boton de Menu -->
+      <div class="menudesplegable"> <!-- desplegable del Menu con eventos-->
         <a href="#" onclick="openRegistro()">Registrarse</a>
         <a href="#" onclick="openLogin()">Iniciar sesion</a>
         <a href="#" onclick="openLista()">Lista de Tareas</a>
@@ -17,18 +17,18 @@
     </div>
   </header>
   <br><br><br><br>
-  <div class="botones">
+  <div class="botones"><!-- Contenedor de Botones de DIAS SEMANA y MES -->
     <button class="boton">DIAS</button>
     <button class="boton">SEMANA</button>
     <button class="boton">MES</button>
   </div>
   <br><br><br><br>
-  <div class="cuadrados">
-    <div id="cuadrado1"></div>
-    <div id="cuadrado2">
+  <div class="cuadrados"> <!-- Contenedor de los cuadrados de la pagina -->
+    <div id="cuadradoizquierdo"></div> <!-- Contenedor de galeria Izquierda -->
+    <div id="cuadradocentro">
       <div id="contenedorRegistro" class="contenedorRegistro">
         <div class="formulario">
-          <h1 id="tituloRegistro">Registro</h1>
+          <h2 id="tituloRegistro">Registro</h2>
           <form>
             <div class="input-group">
               <div class="input-field" id="nameInput">
@@ -43,6 +43,10 @@
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" placeholder="Contraseña">
               </div>
+              <div class="input-field">
+                <i class="fa-solid fa-calendar"></i>
+                <input type="number" placeholder="Edad">
+              </div>
             </div>
             <div class="btn-field">
               <button id="SignUp" type="button">Registrar</button>
@@ -52,7 +56,7 @@
       </div>
       <div id="contenedorLogin" class="contenedorLogin">
         <div class="formulario">
-          <h1 id="tituloLogin">Login</h1>
+          <h2 id="tituloLogin">Login</h2>
           <form>
             <div class="input-group">
               <div class="input-field">
@@ -65,7 +69,7 @@
               </div>
             </div>
             <div class="btn-field">
-              <p>Olvidaste tu contraseña <a href="#">click aquí</a></p>
+              <p>Olvide mi contraseña <a href="#">->Click aquí<-</a></p>
               <button id="SignIn" type="submit">Iniciar sesión</button>
             </div>
           </form>
@@ -79,7 +83,7 @@
       <ul id="contenedorTareas"></ul>
       </div>
     </div>
-    <div id="cuadrado3"></div>
+    <div id="cuadradoderecha"></div><!-- Contenedor de galeria Derecha -->
   </div>
   <br><br><br><br>
   <div class="resultado">

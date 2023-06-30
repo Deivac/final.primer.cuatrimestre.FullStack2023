@@ -12,10 +12,10 @@ window.addEventListener("focus", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   var botonLogin = document.getElementById("botonLogin");
-  var dropdownContent = document.querySelector(".dropdown-content");
+  var menudesplegable = document.querySelector(".menudesplegable");
 
   botonLogin.addEventListener("click", function () {
-    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    menudesplegable.style.display = menudesplegable.style.display === "block" ? "none" : "block";
   }); // Agregar un evento de clic al botón para mostrar u ocultar el menú desplegable
 });
 

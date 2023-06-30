@@ -1,15 +1,18 @@
 body {
     padding: 20px;
     background-color: #FBE4D8;
-} /* fondo de la pagina color claro y un padding de 20 px para que nada toque los bordes*/
+}
+
+/* fondo de la pagina color claro y un padding de 20 px para que nada toque los bordes*/
 
 header {
     background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
     padding: 20px;
     border-radius: 15%;
-    display: flex;
     position: relative;
-}/* estilo de la barra del cabezal */
+}
+
+/* estilo de la barra del cabezal */
 
 h1 {
     margin: 25px;
@@ -20,11 +23,15 @@ h1 {
     font-size: 75px;
     color: #333;
     text-shadow: -3px 3px #ffffff, -3px -3px #ffffff, 3px -3px #ffffff, 3px 3px #f3f3f2, 6px 6px #6ac7c2;
-}/* Estilo del texto TO - DO - LIST */
+}
+
+/* Estilo del texto TO - DO - LIST */
 
 #botonLogin {
     height: 95px;
+    /* ALTO */
     width: 95px;
+    /* ANCHO */
     top: 30%;
     background-image: url('https://cdn-icons-png.flaticon.com/512/3871/3871011.png');
     background-color: transparent;
@@ -33,49 +40,62 @@ h1 {
     border: none;
     position: absolute;
     right: 88px;
-}/* Estilo del boton menu */
+}
 
-.dropdown-content {
+/* Estilo del boton menu */
+
+#botonLogin:hover {
+    filter: drop-shadow(5px 5px 10px);
+    cursor: pointer;
+}
+
+/* Estilo del boton menu cuando paso el cursor*/
+
+.menudesplegable {
     display: none;
-    position:absolute;
+    position: absolute;
     background-color: transparent;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
-    z-index: 1; 
-    margin-top: 168px;
+    z-index: 1;
+    /* prioridad de frente */
+    margin-top: -50px;
     right: 20px;
-    left: auto;
     margin-left: 0;
-}/* */
+}
 
-.dropdown-content a {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+/* Estilo del menu desplegable */
+
+.menudesplegable a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 21px;
     text-transform: uppercase;
     color: #000;
-    border-radius: 3px;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     text-shadow: #333;
-    border: solid;
+    border: 3px solid #F1916D;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-}/* */
+}
 
-.dropdown-content a:hover {
-    color: #333;
-    text-shadow: #000;;
-}/* */
+/* Estilo de los botones del menu */
 
-#botonLogin:hover {
-    filter: drop-shadow(5px 5px 10px);
-}/* */
+.menudesplegable a:hover {
+    color: rgb(221, 94, 137);
+    text-shadow: #000;
+}
+
+/* Estilo de los botones del menu, cuando paso el cursor*/
 
 .botones {
     display: flex;
     justify-content: space-around;
     margin: 25px;
-}/* */
+}
+
+/* Contenedor de los botones de DIA SEMANA y MENU */
 
 .boton {
     border: none;
@@ -93,6 +113,8 @@ h1 {
     border-radius: 25px;
 }
 
+/* CLASE de los 3 botones DIA SEMANA y MENU */
+
 .boton:hover {
     transform: scale(1.1);
     background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
@@ -100,15 +122,17 @@ h1 {
     font-size: 40px;
 }
 
+/* CLASE de los 3 botones DIA SEMANA y MENU cuando paso el cursor*/
+
 .cuadrados {
     display: flex;
     justify-content: space-around;
 }
 
-/*estilo del cuadrado donde se abren los menu desplegables de los botones Dia, Semana, Mes y login*/
+/* Contenedor de los 3 cuadrados */
 
-#cuadrado1 {
-    width: 250px;
+#cuadradoizquierdo {
+    width: 400px;
     height: 600px;
     background-color: transparent;
     border: 5px solid #F1916D;
@@ -118,16 +142,16 @@ h1 {
     margin-right: 20px;
 }
 
-/*estilos del cuadrado de la izquierda*/
+/*estilo del cuadrado de la izquierda*/
 
-#cuadrado2 {
-    width: 1000px;
+#cuadradocentro {
+    width: 750px;
     height: 600px;
     background-color: transparent;
     border: 5px solid #F1916D;
     border-radius: 10px;
-    margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 20px;
@@ -135,12 +159,12 @@ h1 {
     color: #F1916D;
     text-transform: uppercase;
     box-shadow: 0px 0px 10px rgba(241, 145, 109, 0.5);
-}
+  }
 
-/*estilos del cuadrado del medio*/
+/*estilo del cuadrado del medio*/
 
-#cuadrado3 {
-    width: 250px;
+#cuadradoderecha {
+    width: 400px;
     height: 600px;
     background-color: transparent;
     border: 5px solid #F1916D;
@@ -156,9 +180,170 @@ h1 {
     display: flex;
     justify-content: space-between;
     margin: 25px;
+} /*estilo del div que contiene los botones de los premios*/
+
+.contenedorRegistro {
+    display: none;
+    padding: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #000;
+    text-transform: uppercase;
+} /*estilo del div de fondo y formato que contiene el div de registro*/
+
+#tituloRegistro {
+    font-size: 45px;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 20px;
+} /*estilo de Registro, posicion de los inputs y el boton del div registro  flex-direction: column;*/
+
+.contenedorRegistro .input-field {
+    margin-bottom: 10px;
+} /*espacio entre los inputs*/
+
+.contenedorRegistro input[type="text"],
+.contenedorRegistro input[type="email"],
+.contenedorRegistro input[type="password"],
+.contenedorRegistro input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} /*estilo y grosor de los inputs*/
+
+.contenedorRegistro button {
+    padding: 10px 20px; 
+    background-color: #F1916D;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+} /*estilo del fondo del boton de registro*/
+
+.contenedorRegistro button:hover {
+    background-color: #F56848;
+} /*estilo del fondo del boton de registro mas oscuro cuando paso el cursor*/
+
+.contenedorLogin {
+    display: none;
+    padding: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #000;
+    text-transform: uppercase;
+} /*estilo del div de fondo y formato que contiene el div de Login*/
+
+#tituloLogin {
+    font-size: 45px;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 20px;
+} /*estilo de Login, posicion de los inputs y el boton del div Login */
+
+.contenedorLogin .input-field {
+    margin-bottom: 10px;
+}/*espacio entre los inputs*/
+
+.contenedorLogin .btn-field{
+    font-size: 11px;
+    text-transform: none;
+    font-weight: normal;
+} /*Estilo de Olvide mi contraseña*/
+
+.contenedorLogin .btn-field a{
+    font-size: 15px;
+    text-transform: none;
+    font-weight: normal;
+    color: blue;
+} /*Estilo de haz click aqui*/
+
+.contenedorLogin input[type="email"],
+.contenedorLogin input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} /*estilo y grosor de los inputs*/
+
+.contenedorLogin button {
+    padding: 10px 20px; 
+    background-color: #F1916D;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+} /*estilo del fondo del boton de Iniciar Sesión*/
+
+.contenedorLogin button:hover {
+    background-color: #F56848;
+} /*estilo del fondo del boton de Iniciar Sesión mas oscuro cuando paso el cursor*/
+
+.contenedorLista {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-style: normal;
+    margin-top: min(20px, -200px);
 }
 
-/*estilo de la caja que contiene los botones de los premios*/
+.contenedorLista label {
+    font-size: 26px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.contenedorLista input[type="text"] {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.contenedorLista button {
+    padding: 8px 20px;
+    background-color: #F1916D;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contenedorLista button:hover {
+    background-color: #F56848;
+}
+
+.contenedorLista ul {
+    list-style: none;
+    padding: 10px 10;
+    margin: 10px 10;
+    color: #333;
+}
+
+.contenedorLista li {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.contenedorLista .enlace-eliminar {
+    margin-left: 5px;
+    text-decoration: none;
+    color: #F1916D;
+}
+
+.contenedorLista .enlace-eliminar:hover {
+    text-decoration: underline;
+}
 
 .boton1 {
     border: none;
@@ -170,183 +355,39 @@ h1 {
     font-size: 20px;
     font-weight: bold;
     margin-right: 10px;
-}
+} /* Estilo de los botones PENDIENTE y PORCENTAJE*/
 
-/*estilo de los botones de Dia Semana y Mes*/
 
 .boton1:first-child {
     float: left;
     border-radius: 35px 0px 0px 35px;
     margin-left: 50px;
-}
-
-/*estilo de los botones de Dia Semana y Mes*/
+} /*Estilo del boton izquiero PENDIENTE*/
 
 .boton1:last-child {
     float: right;
     border-radius: 0px 35px 35px 0px;
     margin-right: 50px;
-}
-
-/*estilo de los botones de Dia Semana y Mes*/
+} /*Estilo del boton derecho PORCENTAJE*/
 
 .boton1:hover {
     transform: scale(0.8);
     background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
     color: #000000;
     font-size: 30px;
-}
-
-/*cambia de tamanio y color de letra los botones de Dia Semana y Mes cuando paso el cursor*/
+} /* Estilo que cambia cuando paso el cursor por arriba de los botones PENDIENTE y PORCENTAJE*/
 
 #fotofinal {
     background-color: transparent;
     background-size: 95px;
     background-position: center;
     border: none;
-}
-
-/*estilo de la imagen final de la pagina*/
-
-.contenedorRegistro {
-    display: none;
-    margin-top: 50px;
-    padding: 10px;
-    background-color: transparent;
-}
-
-.contenedorRegistro h1 {
-    font-size: 33px;
-    font-style: normal;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-left: auto;
-}
-
-.contenedorRegistro .formulario {
-    display: flex;
-    flex-direction: column;
-}
-
-.contenedorRegistro .input-group {
-    margin-bottom: 15px;
-}
-
-.contenedorRegistro .input-field {
-    position: relative;
-    margin-bottom: 10px;
-}
-
-.contenedorRegistro .input-field i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10px;
-    color: #888;
-}
-
-.contenedorRegistro input[type="text"],
-.contenedorRegistro input[type="email"],
-.contenedorRegistro input[type="password"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contenedorRegistro .btn-field {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contenedorRegistro button {
-    padding: 10px 20px;
-    background-color: #F1916D;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contenedorRegistro button:hover {
-    background-color: #F56848;
-}
+} /*estilo de la imagen final de la pagina*/
 
 
-.contenedorLogin {
-    display: none;
-    margin-top: 50px;
-    padding: 10px;
-    background-color: transparent;
-}
 
-.contenedorLogin h1 {
-    font-size: 33px;
-    font-style: normal;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-left: auto;
-}
 
-.contenedorLogin .formulario {
-    display: flex;
-    flex-direction: column;
-}
 
-.contenedorLogin .input-group {
-    margin-bottom: 15px;
-}
-
-.contenedorLogin .input-field {
-    position: relative;
-    margin-bottom: 10px;
-}
-
-.contenedorLogin .input-field i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10px;
-    color: #888;
-}
-
-.contenedorLogin input[type="email"],
-.contenedorLogin input[type="password"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contenedorLogin .btn-field {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.contenedorLogin button {
-    padding: 10px 20px;
-    background-color: #F1916D;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.contenedorLogin button:hover {
-    background-color: #F56848;
-}
-
-.contenedorLogin p {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.contenedorLogin a {
-    color: #F1916D;
-    text-decoration: none;
-}
 
 
 li {
@@ -358,58 +399,3 @@ li {
     text-decoration: line-through;
 }
 
-.contenedorLista {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  font-style: normal;
-  margin-top: min(20px, -200px);
-}
-
-.contenedorLista label {
-  font-size: 26px;
-  color: #333;
-  margin-right: 10px;
-}
-
-.contenedorLista input[type="text"] {
-  padding: 10px;
-  border: 1px solid #333;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-.contenedorLista button {
-  padding: 8px 20px;
-  background-color: #F1916D;
-  border: 1px solid #333;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.contenedorLista button:hover {
-  background-color: #F56848;
-}
-
-.contenedorLista ul {
-  list-style: none;
-  padding: 10px 10;
-  margin: 10px 10;
-  color: #333;
-}
-
-.contenedorLista li {
-  font-size: 26px;
-  margin-bottom: 15px;
-}
-
-.contenedorLista .enlace-eliminar {
-  margin-left: 5px;
-  text-decoration: none;
-  color: #F1916D;
-}
-
-.contenedorLista .enlace-eliminar:hover {
-  text-decoration: underline;
-}
