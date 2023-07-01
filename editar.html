@@ -10,22 +10,29 @@
     <h1>TO - DO - LIST</h1>
       <button class="button" id="botonLogin"></button><!-- Boton de Menu -->
       <div class="menudesplegable"> <!-- desplegable del Menu con eventos-->
-        <a href="#" onclick="openRegistro()">Registrarse</a>
-        <a href="#" onclick="openLogin()">Iniciar sesion</a>
-        <a href="#" onclick="openLista()">Lista de Tareas</a>
+        <a href="#contenedorRegistro" onclick="openRegistro()">Registrarse</a>
+        <a href="#contenedorLogin" onclick="openLogin()">Iniciar sesion</a>
+        <a href="#contenedorLista" onclick="openLista()">Lista de Tareas</a>
+        <a href="#" onclick="openLimpieza()">Reiniciar</a>
       </div>
-    </div>
   </header>
   <br><br><br><br>
   <div class="botones"><!-- Contenedor de Botones de DIAS SEMANA y MES -->
-    <button class="boton">DIAS</button>
-    <button class="boton">SEMANA</button>
-    <button class="boton">MES</button>
+    <button class="boton" onclick="mostrarMensaje('aqui no hay nada')">DIAS</button> 
+    <button class="boton" onclick="mostrarMensaje('aqui tampoco')">SEMANA</button>
+    <button id="botonmes" onclick="openbotonmes()">MES</button>
   </div>
   <br><br><br><br>
   <div class="cuadrados"> <!-- Contenedor de los cuadrados de la pagina -->
-    <div id="cuadradoizquierdo"></div> <!-- Contenedor de galeria Izquierda -->
-    <div id="cuadradocentro">
+    <div id="cuadradoizquierdo"><!-- Contenedor de galería Izquierda -->
+      <div id="slider">
+        <img src="https://i.pinimg.com/736x/fd/df/70/fddf70003483f19c1f844b3ed422ff76.jpg">
+        <img src="https://www.latercera.com/resizer/0v16bk2d_KFAUmzRfkLFjUVYcyI=/380x570/filters:focal(383x266:393x256)/cloudfront-us-east-1.images.arcpublishing.com/copesa/TXQTG6HRUFCU3LZ6327V5WCYUI.jpg">
+        <img src="https://i.pinimg.com/736x/fd/df/70/fddf70003483f19c1f844b3ed422ff76.jpg">
+        <img src="https://www.latercera.com/resizer/0v16bk2d_KFAUmzRfkLFjUVYcyI=/380x570/filters:focal(383x266:393x256)/cloudfront-us-east-1.images.arcpublishing.com/copesa/TXQTG6HRUFCU3LZ6327V5WCYUI.jpg">
+      </div>
+    </div>
+      <div id="cuadradocentro">
       <div id="contenedorRegistro" class="contenedorRegistro">
         <div class="formulario">
           <h2 id="tituloRegistro">Registro</h2>
@@ -76,23 +83,90 @@
         </div>
       </div>
       <div id="contenedorLista" class="contenedorLista">
-      <h1 id="tituloLista">Lista de tareas pendientes</h1>
+      <h2 id="tituloLista">Lista de tareas pendientes</h2>
       <label for="inputNuevaTarea">Agregar nueva tarea: </label>
       <input type="text" id="inputNuevaTarea">
       <button id="btnAgregarTarea">Ok</button>
       <ul id="contenedorTareas"></ul>
       </div>
+      <main id="contenedorCalendario" class="contenedorCalendario">
+        <section class="mes">
+          <h3 class="nombre__mes">Julio</h3>
+         </section>
+         <section class="dias">
+          <div class="dias__item">Lunes</div>
+          <div class="dias__item">Martes</div>
+          <div class="dias__item">Miercoles</div>
+          <div class="dias__item">Jueves</div>
+          <div class="dias__item">Viernes</div>
+          <div class="dias__item">Sabado</div>
+          <div class="dias__item">Domingo</div>
+         </section>
+      <section class="calendario">
+        <div class="calendario__dia">1</div>
+        <div class="calendario__dia">2</div>
+        <div class="calendario__dia">3</div>
+        <div class="calendario__dia">4</div>
+        <div class="calendario__dia">5</div>
+        <div class="calendario__dia">6</div>
+        <div class="calendario__dia">7</div>
+        <div class="calendario__dia">8</div>
+        <div class="calendario__dia">9</div>
+        <div class="calendario__dia">10</div>
+        <div class="calendario__dia">11</div>
+        <div class="calendario__dia">12</div>
+        <div class="calendario__dia">13</div>
+        <div class="calendario__dia">14</div>
+        <div class="calendario__dia">15</div>
+        <div class="calendario__dia">16</div>
+        <div class="calendario__dia">17</div>
+        <div class="calendario__dia">18</div>
+        <div class="calendario__dia">19</div>
+        <div class="calendario__dia">20</div>
+        <div class="calendario__dia">21</div>
+        <div class="calendario__dia">22</div>
+        <div class="calendario__dia">23</div>
+        <div class="calendario__dia">24</div>
+        <div class="calendario__dia">25</div>
+        <div class="calendario__dia">26</div>
+        <div class="calendario__dia">27</div>
+        <div class="calendario__dia">28</div>
+        <div class="calendario__dia">29</div>
+        <div class="calendario__dia">30</div>
+        <div class="calendario__dia">31</div>
+      </section>
+     </main>
     </div>
-    <div id="cuadradoderecha"></div><!-- Contenedor de galeria Derecha -->
+    <div id="cuadradoderecha">  <!-- Contenedor de galeria Izquierda -->
+      <div id="carrusel-contenido">
+        <div id="carrusel-caja">
+            <div class="carrusel-elemento">
+                <img class="imagenes" src="https://i.pinimg.com/736x/fd/df/70/fddf70003483f19c1f844b3ed422ff76.jpg">
+            </div>
+            <div class="carrusel-elemento">
+                <img class="imagenes" src="https://www.latercera.com/resizer/0v16bk2d_KFAUmzRfkLFjUVYcyI=/380x570/filters:focal(383x266:393x256)/cloudfront-us-east-1.images.arcpublishing.com/copesa/TXQTG6HRUFCU3LZ6327V5WCYUI.jpg">
+            </div>
+            <div class="carrusel-elemento">
+                <img class="imagenes" src="https://i.pinimg.com/736x/fd/df/70/fddf70003483f19c1f844b3ed422ff76.jpg">
+            </div>
+            <div class="carrusel-elemento">
+                <img class="imagenes" src="https://www.latercera.com/resizer/0v16bk2d_KFAUmzRfkLFjUVYcyI=/380x570/filters:focal(383x266:393x256)/cloudfront-us-east-1.images.arcpublishing.com/copesa/TXQTG6HRUFCU3LZ6327V5WCYUI.jpg">
+            </div>
+        </div>
+    </div>
+    </div>
+        
+    </div>
+    </div>
   </div>
   <br><br><br><br>
-  <div class="resultado">
-    <button class="boton1">PENDIENTES</button>
+  <div class="div-final">
+    <button id="boton1" onclick="openGaleria1()">GALERIA 1</button>
     <img src="https://i.pinimg.com/originals/9c/d5/7e/9cd57e2d97f3da5158dad195f144fb5d.png" alt="Imagen"
       class="imagen" width="10%">
-    <button class="boton1">PORCENTAJE</button>
+    <button id="boton2" onclick="openGaleria2()">GALERIA 2</button>
   </div>
   <script src="editar.js"></script>
+
 </body>
 
-</html>

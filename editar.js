@@ -27,6 +27,7 @@ function openRegistro() {
   contenedorRegistro.style.display = "block";
   contenedorLogin.style.display = "none";
   contenedorLista.style.display = "none";
+  contenedorCalendario.style.display = "none";
 }
 
 function openLogin() {
@@ -37,6 +38,7 @@ function openLogin() {
   contenedorRegistro.style.display = "none";
   contenedorLogin.style.display = "block";
   contenedorLista.style.display = "none";
+  contenedorCalendario.style.display = "none";
 }
 
 function openLista() {
@@ -47,6 +49,7 @@ function openLista() {
   contenedorRegistro.style.display = "none";
   contenedorLogin.style.display = "none";
   contenedorLista.style.display = "block";
+  contenedorCalendario.style.display = "none";
 }
 
 
@@ -138,3 +141,42 @@ document.addEventListener("DOMContentLoaded", () => {
   tareas = obtenerTareasDeAlmacenamiento();
   refrescarListaDeTareas();
 });
+
+function openGaleria1() {
+  var slider = document.getElementById("slider");
+  slider.style.display = "block";
+}
+
+function openGaleria2() {
+  var carruselContenido = document.getElementById("carrusel-contenido");
+  carruselContenido.style.display = "block";
+}
+
+function mostrarMensaje(mensaje) {
+  alert(mensaje);
+}
+
+function openbotonmes() {
+  var contenedorCalendario = document.getElementById("contenedorCalendario");
+
+  contenedorRegistro.style.display = "none";
+  contenedorLogin.style.display = "none";
+  contenedorLista.style.display = "none";
+  contenedorCalendario.style.display = "block"; 
+}
+
+function openLimpieza() {
+  var contenedorRegistro = document.getElementById("contenedorRegistro");
+  var contenedorLogin = document.getElementById("contenedorLogin");
+  var contenedorLista = document.getElementById("contenedorLista");
+  var slider = document.getElementById("slider");
+  var carruselContenido = document.getElementById("carrusel-contenido");
+  var contenedorCalendario = document.getElementById("contenedorCalendario");
+
+  carruselContenido.style.display= "none"
+  slider.style.display = "none"
+  contenedorRegistro.style.display = "none";
+  contenedorLogin.style.display = "none";
+  contenedorLista.style.display = "none";
+  contenedorCalendario.style.display = "none";
+}
