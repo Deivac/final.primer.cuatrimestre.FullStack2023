@@ -162,7 +162,7 @@ function openbotonmes() {
   contenedorRegistro.style.display = "none";
   contenedorLogin.style.display = "none";
   contenedorLista.style.display = "none";
-  contenedorCalendario.style.display = "block"; 
+  contenedorCalendario.style.display = "block";
 }
 
 function openLimpieza() {
@@ -173,10 +173,11 @@ function openLimpieza() {
   var carruselContenido = document.getElementById("carrusel-contenido");
   var contenedorCalendario = document.getElementById("contenedorCalendario");
 
-  carruselContenido.style.display= "none"
+  carruselContenido.style.display = "none"
   slider.style.display = "none"
   contenedorRegistro.style.display = "none";
   contenedorLogin.style.display = "none";
   contenedorLista.style.display = "none";
   contenedorCalendario.style.display = "none";
 }
+
