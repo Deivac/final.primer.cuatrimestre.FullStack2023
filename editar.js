@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }); // Agregar un evento de clic al botón para mostrar u ocultar el menú desplegable
 });
 
-function openRegistro() {
+// Funcion para activar el registro y desacribar las otras opciones del meno. tambien activa en consola el saludo general
+function saludaryopenRegistro() {
+  console.log("Hola Usuario, comenzemos con registrar tu identidad para poder acceder a todas las funciones de nuestra web") 
   var contenedorRegistro = document.getElementById("contenedorRegistro");
   var contenedorLogin = document.getElementById("contenedorLogin");
   var contenedorLista = document.getElementById("contenedorLista");
@@ -30,6 +32,7 @@ function openRegistro() {
   contenedorCalendario.style.display = "none";
 }
 
+// Funcion para activar el Login y desacrivar las demas opciones del menu
 function openLogin() {
   var contenedorRegistro = document.getElementById("contenedorRegistro");
   var contenedorLogin = document.getElementById("contenedorLogin");
@@ -41,6 +44,7 @@ function openLogin() {
   contenedorCalendario.style.display = "none";
 }
 
+// Funcion para activar el la lista de tareas y desacrivar las demas opciones del menu
 function openLista() {
   var contenedorRegistro = document.getElementById("contenedorRegistro");
   var contenedorLogin = document.getElementById("contenedorLogin");
@@ -52,10 +56,11 @@ function openLista() {
   contenedorCalendario.style.display = "none";
 }
 
-
+// Funcion para activar la lista de tareas (copio pego)
 const CLAVE_LOCALSTORAGE = "lista_tareas";
 document.addEventListener("DOMContentLoaded", () => {
   let tareas = []; // El arreglo global que vamos a manejar
+
   // Declaración de elementos del DOM
   const $contenedorTareas = document.querySelector("#contenedorTareas"),
     $btnGuardarTarea = document.querySelector("#btnAgregarTarea"),
@@ -142,20 +147,24 @@ document.addEventListener("DOMContentLoaded", () => {
   refrescarListaDeTareas();
 });
 
+// funcion para que se abra la primer galeria con onclick
 function openGaleria1() {
   var slider = document.getElementById("slider");
   slider.style.display = "block";
 }
 
+// funcion para que se abra la segunda galeria con onclick
 function openGaleria2() {
   var carruselContenido = document.getElementById("carrusel-contenido");
   carruselContenido.style.display = "block";
 }
 
+// funcion para que se abran los mensajes de dia y semana con onclick
 function mostrarMensaje(mensaje) {
   alert(mensaje);
 }
 
+// Funcion para activar el MES y desactivar las demas opciones del menu
 function openbotonmes() {
   var contenedorCalendario = document.getElementById("contenedorCalendario");
 
@@ -165,6 +174,7 @@ function openbotonmes() {
   contenedorCalendario.style.display = "block";
 }
 
+// Funcion para volver a reiniciar la pagina
 function openLimpieza() {
   var contenedorRegistro = document.getElementById("contenedorRegistro");
   var contenedorLogin = document.getElementById("contenedorLogin");
@@ -179,5 +189,12 @@ function openLimpieza() {
   contenedorLogin.style.display = "none";
   contenedorLista.style.display = "none";
   contenedorCalendario.style.display = "none";
+}
+
+// Funcion para avisar al usuario segun su nombre el registro correcto
+function registroconsola(){
+  let nodoInput = document.getElementById ("nombreInput");
+  let nombre = nodoInput.value;
+  console.log("Genial "+nombre+", ya validamos tu registro." );
 }
 

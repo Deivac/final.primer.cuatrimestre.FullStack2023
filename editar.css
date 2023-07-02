@@ -70,6 +70,8 @@ h1 {
     text-align: center;
 }
 
+/* Estilo del boton de reiniciar */
+
 
 .menudesplegable a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -181,13 +183,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
-
 
 /*estilo del cuadrado de la izquierda*/
 
 #cuadradocentro {
+    flex-grow: 1;
     width: 750px;
     height: 600px;
     background-color: transparent;
@@ -214,6 +215,9 @@ h1 {
     box-shadow: 0px 0px 10px rgba(241, 145, 109, 0.5);
     margin-right: 50px;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*estilo del cuadrado de la derecha*/
@@ -449,16 +453,20 @@ h1 {
     cursor: pointer;
 }
 
-/* estilo del checkbox de la lista que crea el usuario */
+/* estilo del contenido de la lista que crea el usuario */
 
 li {
     list-style: none;
     margin-bottom: 50px;
 }
 
+/* estilo de la cruz para eliminar la actividad */
+
 .tachado {
     text-decoration: line-through;
 }
+
+/* tacha la actividad realizada */
 
 #boton1 {
     border: none;
@@ -512,7 +520,6 @@ li {
     cursor: pointer;
 }
 
-
 /* Estilo que cambia cuando paso el cursor por arriba del boton Galeria1 */
 
 #boton2:hover {
@@ -540,20 +547,20 @@ li {
     aspect-ratio: 10/16;
     display: none;
     overflow: scroll;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: y mandatory;
 }
 
 /*estilo del contenedor de la galeria del cuadro izquierdo*/
 
 #slider img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 5px;
     scroll-snap-align: center;
 }
 
 /*estilo de las imagenes de la galeria del cuadro izquierdo*/
-
 
 #carrusel-caja {
     -moz-animation: automatizacion 3s infinite linear;
@@ -724,6 +731,9 @@ li {
     font-weight: normal;
 }
 
+/*estilo del contenedor calendario*/
+
+
 .nombre__mes {
     text-align: center;
     color: #51565d;
@@ -731,6 +741,9 @@ li {
     padding: 23px 0;
     font-weight: bold;
 }
+
+/*estilo del nombre Julio*/
+
 
 .dias {
     display: grid;
@@ -742,11 +755,15 @@ li {
     color: #51565d;
 }
 
+/*estilo de los dias*/
+
 .calendario {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-auto-rows: 85px;
 }
+
+/*organizacion de los numeros*/
 
 .calendario__dia {
     border-bottom: 1px solid #7a7c841f;
@@ -755,3 +772,5 @@ li {
     cursor: pointer;
     color: #51565d;
 }
+
+/*estilo de las lineas para que se parezca a un calendario*/

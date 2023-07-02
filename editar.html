@@ -3,6 +3,7 @@
 
 <head>
   <title>ChekList-Web</title>
+  <meta charset="UTF-8" />
   <link rel="stylesheet" href="editar.css"> <!-- linkeo de estilo css -->
 </head>
 
@@ -11,7 +12,7 @@
     <h1>TO - DO - LIST</h1>
     <button class="button" id="botonLogin"></button><!-- Boton de Menu -->
     <div class="menudesplegable"> <!-- desplegable del Menu con eventos-->
-      <a href="#contenedorRegistro" onclick="openRegistro()">Registrarse</a>
+      <a href="#contenedorRegistro" onclick="saludaryopenRegistro()">Registrarse</a>
       <a href="#contenedorLogin" onclick="openLogin()">Iniciar sesion</a>
       <a href="#contenedorLista" onclick="openLista()">Lista de Tareas</a>
       <a href="#" onclick="openLimpieza()">Reiniciar</a>
@@ -24,47 +25,47 @@
     <button id="botonmes" onclick="openbotonmes()">MES</button>
   </div>
   <br><br><br><br>
-  <div class="cuadrados"> <!-- Contenedor de los cuadrados de la pagina -->
+  <div class="cuadrados"> <!-- Contenedor de los 3 cuadrados centrales de la pagina -->
     <div id="cuadradoizquierdo"><!-- Contenedor de galería Izquierda -->
       <div id="slider">
-        <img src="https://i.pinimg.com/736x/fd/df/70/fddf70003483f19c1f844b3ed422ff76.jpg">
         <img
-          src="https://www.latercera.com/resizer/0v16bk2d_KFAUmzRfkLFjUVYcyI=/380x570/filters:focal(383x266:393x256)/cloudfront-us-east-1.images.arcpublishing.com/copesa/TXQTG6HRUFCU3LZ6327V5WCYUI.jpg">
-        <img src="https://i.pinimg.com/736x/fd/df/70/fddf70003483f19c1f844b3ed422ff76.jpg">
+          src="https://images.unsplash.com/photo-1512850183-6d7990f42385?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80">
         <img
-          src="https://www.latercera.com/resizer/0v16bk2d_KFAUmzRfkLFjUVYcyI=/380x570/filters:focal(383x266:393x256)/cloudfront-us-east-1.images.arcpublishing.com/copesa/TXQTG6HRUFCU3LZ6327V5WCYUI.jpg">
+          src="https://images.unsplash.com/photo-1526512340740-9217d0159da9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVydGljYWx8ZW58MHx8MHx8fDA%3D&w=1000&q=80">
+        <img
+          src="https://images.unsplash.com/photo-1530236668220-b9c6c098c9aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80">
+        <img
+          src="https://images.unsplash.com/photo-1548713232-b09865dc852b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80">
       </div>
     </div>
-    <div id="cuadradocentro">
-      <div id="contenedorRegistro" class="contenedorRegistro">
+    <div id="cuadradocentro"><!-- Contenedor del cuadro del medio -->
+      <div id="contenedorRegistro" class="contenedorRegistro"> <!-- Contenedor de Registro -->
         <div class="formulario">
           <h2 id="tituloRegistro">Registro</h2>
           <form>
             <div class="input-group">
               <div class="input-field" id="nameInput">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" id="nombreInput" placeholder="Nombre" required pattern="[A-Za-z\s]+">
+                <input type="text" id="nombreInput" placeholder="Nombre" required pattern="[A-Za-z\s]+"
+                  title="Ingrese un nombre válido (solo letras y espacios)">
               </div>
               <div class="input-field">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" placeholder="Correo" required>
+                <input type="email" id="correo" placeholder="Correo" required>
               </div>
               <div class="input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password" required>
-              </div>
-              <div class="input-field">
-                <i class="fa-solid fa-calendar"></i>
-                <input type="number" placeholder="Edad" required min="18">
+                <input type="password" id="contraseña" placeholder="Password" required minlength="6"
+                  title="La contraseña debe tener al menos 6 caracteres">
               </div>
             </div>
             <div class="btn-field">
-              <button id="SignUp" type="submit">Registrar</button>
+              <button id="SignUp" onclick="registroconsola()" type="submit">Registrar</button>
             </div>
           </form>
         </div>
       </div>
-      <div id="contenedorLogin" class="contenedorLogin">
+      <div id="contenedorLogin" class="contenedorLogin"> <!-- Contenedor Login -->
         <div class="formulario">
           <h2 id="tituloLogin">Login</h2>
           <form>
@@ -79,13 +80,13 @@
               </div>
             </div>
             <div class="btn-field">
-              <p>Olvide mi contraseña <a href="#">->Click aquí<-< /a></p>
+              <p>Olvide mi contraseña <a href="#">->Click aquí<- </a></p>
               <button id="SignIn" type="submit">Iniciar sesión</button>
             </div>
           </form>
         </div>
       </div>
-      <div id="contenedorLista" class="contenedorLista">
+      <div id="contenedorLista" class="contenedorLista"> <!-- Contenedor de Lista de Tareas -->
         <h2 id="tituloLista">Lista de tareas pendientes</h2>
         <label for="inputNuevaTarea">Agregar nueva tarea: </label>
         <input type="text" id="inputNuevaTarea">
@@ -93,6 +94,7 @@
         <ul id="contenedorTareas"></ul>
       </div>
       <main id="contenedorCalendario" class="contenedorCalendario">
+        <!-- Contenedor del calendario cuando se clickea en MES -->
         <section class="mes">
           <h3 class="nombre__mes">Julio</h3>
         </section>
@@ -144,31 +146,31 @@
       <div id="carrusel-contenido">
         <div id="carrusel-caja">
           <div class="carrusel-elemento">
-            <img class="imagenes" src="https://i.pinimg.com/736x/fd/df/70/fddf70003483f19c1f844b3ed422ff76.jpg">
+            <img class="imagenes" src="https://wallpaperaccess.com/full/1727579.jpg">
+          </div>
+          <div class="carrusel-elemento">
+            <img class="imagenes" src="https://i.pinimg.com/originals/d1/fc/46/d1fc467907b22e1822d5aef857fdc85c.jpg">
           </div>
           <div class="carrusel-elemento">
             <img class="imagenes"
-              src="https://www.latercera.com/resizer/0v16bk2d_KFAUmzRfkLFjUVYcyI=/380x570/filters:focal(383x266:393x256)/cloudfront-us-east-1.images.arcpublishing.com/copesa/TXQTG6HRUFCU3LZ6327V5WCYUI.jpg">
-          </div>
-          <div class="carrusel-elemento">
-            <img class="imagenes" src="https://i.pinimg.com/736x/fd/df/70/fddf70003483f19c1f844b3ed422ff76.jpg">
+              src="https://e1.pxfuel.com/desktop-wallpaper/681/420/desktop-wallpaper-tloz-breath-of-the-wild-mobile-vertical-breath-of-the-wild-mobile.jpg">
           </div>
           <div class="carrusel-elemento">
             <img class="imagenes"
-              src="https://www.latercera.com/resizer/0v16bk2d_KFAUmzRfkLFjUVYcyI=/380x570/filters:focal(383x266:393x256)/cloudfront-us-east-1.images.arcpublishing.com/copesa/TXQTG6HRUFCU3LZ6327V5WCYUI.jpg">
+              src="https://e0.pxfuel.com/wallpapers/1016/483/desktop-wallpaper-grim-fandango-pc-humorous-quest-samsung-galaxy-s6-thumbnail.jpg">
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
   <br><br><br><br>
-  <div class="div-final">
+  <div class="div-final"> <!-- Contenedor de los botones que activan las galerias -->
     <button id="boton1" onclick="openGaleria1()">GALERIA 1</button>
     <img src="https://i.pinimg.com/originals/9c/d5/7e/9cd57e2d97f3da5158dad195f144fb5d.png" alt="Imagen" class="imagen"
       width="10%">
     <button id="boton2" onclick="openGaleria2()">GALERIA 2</button>
   </div>
-  <script src="editar.js"></script>
-
+  <script src="editar.js"></script> <!-- link js -->
 </body>
+
+</html>
